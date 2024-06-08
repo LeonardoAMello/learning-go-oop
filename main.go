@@ -1,31 +1,15 @@
 package main
 
-import (
-	"fmt"
-)
-
-type Animal struct {
-	name  string
-	sound string
-	mood  string
-}
-
-func (a *Animal) pet() {
-	a.mood = "Happy"
-}
-
-func (a *Animal) describeAnimal() {
-	fmt.Println(a.name, "makes", a.sound, "sound and its mood is", a.mood)
-}
+import "./animals"
 
 func main() {
-	dog := Animal{"Dog", "Roof", "Neutral"}
-	cat := Animal{"Cat", "Meow", "Neutral"}
-	someAnimal := Animal{sound: "???"}
+	dog := animals.Animal{"Dog", "Roof", "Neutral"}
+	cat := animals.Animal{"Cat", "Meow", "Neutral"}
+	someAnimal := animals.Animal{Sound: "???"}
 
-	cat.pet()
+	cat.Pet()
 
-	dog.describeAnimal()
-	cat.describeAnimal()
-	someAnimal.describeAnimal()
+	dog.DescribeAnimal()
+	cat.DescribeAnimal()
+	someAnimal.DescribeAnimal()
 }
